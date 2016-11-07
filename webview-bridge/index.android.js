@@ -116,14 +116,13 @@ var WebViewBridge = React.createClass({
 
     let {source, ...props} = {...this.props};
 
-    console.log("tweaked source",source);
     var webView =
       <RCTWebViewBridge
         ref={RCT_WEBVIEWBRIDGE_REF}
         key="webViewKey"
  				javaScriptEnabled={true}
         {...props}
-        source={source.uri ? resolveAssetSource(source) : source}
+        source={typeof(source) == "number" ? resolveAssetSource(source) : source}
         style={webViewStyles}
         onLoadingStart={this.onLoadingStart}
         onLoadingFinish={this.onLoadingFinish}
