@@ -133,7 +133,6 @@ var WebViewBridge = React.createClass({
 
     return (
       <View style={styles.container}>
-        <Text>FOO</Text>
         {webView}
         {otherView}
       </View>
